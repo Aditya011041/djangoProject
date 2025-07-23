@@ -14,7 +14,7 @@ class ArticleData(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField(blank=True , default="")
     word_counts = models.IntegerField(default=0)
-    twitter_post = models.TextField
+    twitter_post = models.TextField()
     status = models.CharField(max_length=20, choices=ARTICLE_STATUS , default='draft')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
