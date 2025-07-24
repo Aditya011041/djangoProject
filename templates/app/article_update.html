@@ -1,7 +1,8 @@
 {% extends 'app/base.html' %}
 
 {% block content %}
-    <h1>Create New Article</h1>
+    <h1>Update Article</h1>
+    <p>Word count of article is: {{article.word_counts}} word{{article.word_counts | pluralize}}</p>
     <p>Article last updated at : {{article.updated_at | date:"jS F Y"}}</p>
     <form method="POST">
         {% csrf_token %}

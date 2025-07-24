@@ -2,9 +2,13 @@
     {% block content %}
     <h1>Articles List</h1>
     <a href="{% url 'create_article' %}">Create a new article</a>
-    <ul>
-        {% for article in articles %}
-            <li>Update article <a href="{% url 'update_article' article.id %}">{{article.title}}</a> with word numbers: {{article.word_counts}}</li>
-        {% endfor %}
-    </ul>
+    {% if articles %}
+        <ul>
+            {% for article in articles %}
+                <li>Update article <a href="{% url 'update_article' article.id %}">{{article.title}}</a> with word numbers: {{article.word_counts}} word{{article.word_counts | pluralize}}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No articles available.</p>
+    {% endif %}
     {% endblock content %}
